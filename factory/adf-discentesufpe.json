@@ -1,0 +1,9 @@
+{
+	"name": "adf-discentesufpe",
+	"location": "eastus2",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "9a536b55-bb5d-4071-b192-48d2aed4451b",
+		"tenantId": "63474290-3700-401b-bc81-f0b095ec8317"
+	}
+}
