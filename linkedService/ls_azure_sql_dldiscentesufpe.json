@@ -1,12 +1,18 @@
 {
 	"name": "ls_azure_sql_dldiscentesufpe",
-	"type": "Microsoft.DataFactory/factories/linkedservices",
 	"properties": {
 		"annotations": [],
 		"type": "AzureSqlDatabase",
 		"typeProperties": {
-			"connectionString": "integrated security=False;encrypt=True;connection timeout=30;data source=sql-server-ufpe.database.windows.net;initial catalog=sqldb-ufpe;user id=azureadmin",
-			"encryptedCredential": "ew0KICAiVmVyc2lvbiI6ICIyMDE3LTExLTMwIiwNCiAgIlByb3RlY3Rpb25Nb2RlIjogIktleSIsDQogICJTZWNyZXRDb250ZW50VHlwZSI6ICJQbGFpbnRleHQiLA0KICAiQ3JlZGVudGlhbElkIjogIkRBVEFGQUNUT1JZQEE0QjJDMkJDLTIwM0ItNDQ1Ny1CMUEwLUFDMUNEMTI2RjE5RV83ZjIzOGUwOC00Zjg1LTQ5ZDgtYTBkNC1iY2I1N2IzZjAyNjgiDQp9"
+			"connectionString": {
+				"type": "AzureKeyVaultSecret",
+				"store": {
+					"referenceName": "ls_kv_ufpe",
+					"type": "LinkedServiceReference"
+				},
+				"secretName": "kvsqldbdiscentesufpe"
+			}
 		}
-	}
+	},
+	"type": "Microsoft.DataFactory/factories/linkedservices"
 }
